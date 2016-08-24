@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+	<!--
+	intro to HTML5 markupt at W3Schools
+	http://www.w3schools.com/html/html5_intro.asp
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS Floats</title>
+		<!--
+		our embedded stylesheet. You will do all your editing
+		during the lesson below.
+		-->
+		<style>
+			/* default styles, don't touch */
+			* { padding: 4px; margin: 4px; } /* 'star' hack to access all elements */
+			#wrapper { border: 2px solid #aaa; }
+			header { border: 2px solid red; }
+			section { border: 2px solid green; }
+			aside { border: 2px solid orange; }
+			footer { border: 2px solid blue; }
+
+			/* ENTER YOUR CODE BELOW. NOTE THAT WE CAN 
+			ADD TO OR OVERRIDE STYLES ABOVE */
+
+			/* 0. by default, <header> has a line break, pushing <main> underneath */
+
+			header {
+
+				/* float:left; */
+
+				/* 1. add float:left to the header
+					a. the <main> element slams upwards into the <header> column
+					b. <main> then slides under it. 
+					c. <main> It stops at the padding in <header>, which is why 
+						the floated <header> and <main> do not align. 
+				
+				The inline <img> elements inside of <main> wrap INDEPENDENTLY to the right of 
+				<header> even though their parent <main> element has "dived underneath" 
+				the <header> tag. */
+
+				/* width:100%; */
+
+				/* 2. Adjust <header> with to 100%;
+					a. <main> can't "squeeze" to the right, so it slide STRAIGHT UP under <header>
+				*/
+
+			}
+
+			.clearfix {
+
+				/* overflow: auto; */
+
+				/* 3. adjust float with overflow:auto, 
+					a. <main> floats to right-hand side of header with its child elements 
+						inside in their default position.
+					b. they no longer wrap independently of <header>. 
+				 	c. overflow: hidden; also works. 
+				 	d. if your content is too long, overflow: will put scrollbar on it.
+				*/
+
+				/* clear: left; */
+
+				/* 4. adjust float with clear: left; 
+					a. The linebreak is restored
+					b. the <main> element floats down, since the float has been cleared 
+						by the parent HTML element.
+				*/
+
+
+				/* 5. There are other clearfixes which don't have the disadvantage of the overflow 
+				property */
+			}
+
+		</style>
+	</head>
+	<body>
+
+	<!--page header-->
+	<header>
+		<h1>A Day in the Life of a Beast</h1>
+		<nav>
+			<ul>
+				<ul>
+					<li>Home</li>
+					<li>About</li>
+					<li>Contact</li>
+				</ul>
+			</ul>
+		</nav>
+	</header>
+	<!--main content on page-->
+	<main id="main" class="clearfix">
+	<section id="content">
+		<p>This is a small cat called Squeek.</p>
+		<img src="img/beast_01.png" alt="begging beast">
+		<img src="img/beast_02.png" alt="friendly beast">
+		<img src="img/beast_03.png" alt="sleepy beast">
+		<p>Description: This scenes from the entertaining day experienced by this small beast.</p>
+	</section>
+	<aside id="content-second">
+		<p>Squeek is a cat that enjoys performing doglike tricks. When not pretending to be a dog, he hangs out with his friend, Boris. It is fun, but after a long day he needs to sleep</p>
+	</aside>
+	<!--page footer-->
+	<footer>
+		<p>&copy; 2016 Vegan Neat Market. All Rights Rerved</p>
+	</footer>
+	</main><!--end of wrapper-->
+	</body>
+</html>
